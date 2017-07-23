@@ -1,0 +1,86 @@
+This file contains a description of the files in this directory.
+
+addActivityConstraints.m
+MATLAB function used to automatically add linear kinetics constraints representing mass-action kinetics.
+
+calcFluxesViaBackslash.m
+MATLAB function used to perform DFE using a process based on the method of Ishii et al.
+
+calcLKDFBA.m
+MATLAB function used to construct and solve an LK-DFBA problem. A core function of this work.
+
+convertModelIrrev.m
+MATLAB function used to automatically convert reversible reactions into two irreversible reactions.
+
+evalSmoothingDeriv.m
+MATLAB function for data smoothing, from Dromms and Styczynski.
+
+evalSmoothingFcn.m
+MATLAB function for data smoothing, from Dromms and Styczynski.
+
+fitBranch.m
+MATLAB function for setting up fits on the branched pathway model--calls functions for the GA, LR, LR+, MM, and BST methods.
+
+fitBstBranch.m
+MATLAB function for fitting the branched pathway model with BST method.
+
+fitChass.m
+MATLAB function for setting up fits on the E. coli model--calls functions for the GA, LR, and LR+ methods.
+
+fitLKDFBA.m
+MATLAB function for performing parameter optimization for LK-DFBA models. A core function of this work.
+
+fitMmBranch.m
+MATLAB function for fitting the branched pathway model with MM method.
+
+fitSmoothingFcn.m
+MATLAB function for data smoothing, from Dromms and Styczynski.
+
+genScript_rerunJobsMatlab.m
+MATLAB script for generating a MATLAB script with multiple fitting jobs.
+
+genScript_rerunJobsPace.m
+MATLAB script for PBS-based job queues
+
+processToFittingData.m
+MATLAB function used during DFE steps for data pre-processing.
+
+setFitParamsBranch.m
+MATLAB script used to specify and set default fitting parameters for the branch pathway model.
+
+setFitParamsChass.m
+MATLAB script used to specify and set default fitting parameters for the E. coli model.
+
+setLkdfbaParamsBranch.m
+MATLAB script used to specify and set default LK-DFBA parameters for the branch pathway model.
+
+setLkdfbaParamsChassFixedGlc.m
+MATLAB script used to specify and set default LK-DFBA parameters for the E. coli model when using data with fixed extracellular glucose concentrations.
+
+setLkdfbaParamsChassVariableGlc.m
+MATLAB script used to specify and set default LK-DFBA parameters for the E. coli model when using data with variable extracellular glucose concentrations.
+
+solveOdeBstBranch.m
+MATLAB function used to integrate BST kinetic rate laws for the branch pathway model.
+
+solveOdeMmBranch.m
+MATLAB function used to integrate MM kinetic rate laws for the branch pathway model.
+
+splitOdeDataReversible.m
+MATLAB function used to convert reversible reactions into two irreversible reactions in ODE data.
+
+wrapper_fitBranchNoiseless.m
+MATLAB wrapper function used to specify run conditions for the branch pathway model when using noiseless data, in turn calling 'fitBranch.m'. This wrapper function is called by the main driver scripts to run multiple fitting tasks.
+
+wrapper_fitBranchNoisy.m
+MATLAB wrapper function used to specify run conditions for the branch pathway model when using noisy data, in turn calling 'fitBranch.m'. This wrapper function is called by the main driver scripts to run multiple fitting tasks.
+
+wrapper_fitChassNoiseless.m
+MATLAB wrapper function used to specify run conditions for the E. coli model when using noiseless data, in turn calling 'fitChass.m'. This wrapper function is called by the main driver scripts to run multiple fitting tasks.
+
+wrapper_fitChassNoisySplit.m
+MATLAB wrapper function used to specify run conditions for the E. coli model when using noisy data and the split parameterization method, in turn calling 'fitChass.m'. This wrapper function is called by the main driver scripts to run multiple fitting tasks.
+
+wrapper_fitChassNoisyUnsplit.m
+MATLAB wrapper function used to specify run conditions for the E. coli model when using noisy data and the unsplit parameterization method, in turn calling 'fitChass.m'. This wrapper function is called by the main driver scripts to run multiple fitting tasks.
+

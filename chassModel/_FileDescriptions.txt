@@ -1,0 +1,46 @@
+This file contains a description of the files in this directory.
+
+chass_copasiOutput_fixedGlc.txt
+Copasi ODE simulaiton output, generated from the conditions in chass2002_ishiiSettings.cps and setting glucose to a fixed value when introducing the perturbed value.
+
+chass_copasiOutput_variableGlc.txt
+Copasi ODE simulaiton output, generated from the conditions in chass2002_ishiiSettings.cps and setting glucose to an unfixed initial value when introducing the perturbed value.
+
+chass2002_ishiiSettings.cps
+Copasi save file, with Chass2002.xml loaded in and modified to reflect the run conditions described by Ishii et al.
+
+chass2002.cps
+Copasi Save file, with Chass2002.xml loaded in.
+
+Chass2002.xml
+SBML file containing the Chassagnole E. coli model from the Biomodels Database.
+
+chassF_hiRes.mat
+High resolution ODE data from the Chassagnole model in MATLAB data file format. Produced from 'chass_copasiOutput_fixedGlc.txt'.
+
+chassModelInfo.xlsx
+Excel file containing metadata for the E. coli model, for reference.
+
+chassSTM.mat
+Contains the E. coli model Stoichiometric Matrix. Used to set up the LK-DFBA model.
+
+chassV_hiRes.mat
+High resolution ODE data from the Chassagnole model in MATLAB data file format. Produced from 'chass_copasiOutput_variableGlc.txt'.
+
+copasiSTM.txt
+Stoichiometric Matrix for the E. coli model, as output directly from Copasi. Used to generate 'chassSTM.mat'
+
+driver_convertChassDataToMat_fixed.m
+MATLAB script to convert the data in 'chass_copasiOutput_fixedGlc.txt' to the MATLAB data file, 'chassF_hiRes.mat'. Results placed in 'generatedOutput'.
+
+driver_convertChassDataToMat_variable.m
+MATLAB script to convert the data in 'chass_copasiOutput_variableGlc.txt' to the MATLAB data file, 'chassV_hiRes.mat'. Results placed in 'generatedOutput'.
+
+driver_genNoisyDatasets.m
+MATLAB script to convert 'chassV_hiRes.mat' (or 'chassF_hiRes.mat') into noisy time course data.
+
+generatedOutput
+Directory containing the noiseless and noisy E. coli synthetic data.
+
+genNoisyDataChass.m
+MATLAB function used by 'driver_genNoisyDatasets.m' to add noise to a time course.

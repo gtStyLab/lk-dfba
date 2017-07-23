@@ -1,0 +1,19 @@
+This file contains a description of the files in this directory.
+
+driver_genBranchJobs_hiRes.m
+MATLAB Script to generate 'driver_runJobs_matlab_hiRes.m'.
+
+driver_genBranchJobs_noisy.m
+MATLAB Script to generate 'driver_runJobs_matlab_noisy.m'.
+
+driver_runJobs_matlab_hiRes.m
+MATLAB Script containing a list of calls to wrapper_fitBranchNoiseless(). This script performs the main parameter fitting task for the noiseless branched pathway data in Figure S8 of the Supplementary Text.
+
+driver_runJobs_matlab_noisy.m
+MATLAB Script containing a list of calls to wrapper_fitBranchNoiseless(). This script performs the main parameter fitting task for the noisy branched pathway data in Figures 2 and 3 of the manuscript.
+
+loadFileNameListBranchHiRes.m
+A list of files in 'branchAnalysis/branchData_hiRes' used by driver_genBranchJobs_hiRes.m to generate calls to wrapper_fitBranchNoiseless().
+
+loadFileNameListBranchNoisy.m
+A list of files in 'branchAnalysis/branchData' used by driver_genBranchJobs_noisy.m to generate calls to wrapper_fitBranchNoisy().

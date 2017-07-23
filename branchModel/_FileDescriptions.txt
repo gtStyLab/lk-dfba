@@ -1,0 +1,19 @@
+This file contains a description of the files in this directory.
+
+convertOdeParams.m
+Matlab script used to convert BST ODE parameters from a vector to a structure. See Figure 1 of the manuscript for further explanation.
+
+driver_genDatasets.m
+MATLAB Script that generates branched pathway models from pre-defined parameters. Reads in parameters listed in getParamsVecNum.m and generates noiseless and noisy data sets.
+
+driver_plotModel.m
+A script for plotting example time course plots for the branched pathway model
+
+getParamsVecNum.m
+MATLAB script containing the branched pathway model parameters shown in Table S1 of the Supplementary Text.
+
+wrapper_genNoisyData.m
+MATLAB function to downsample and add noise to ODE data based on COV and nT.
+
+wrapper_genOdeData.m
+MATLAB function to perform ODE integration assuming the branched pathway model structure.
