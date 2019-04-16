@@ -38,14 +38,16 @@ function v = calcFluxes(~,x,params)
 
     v(1,1) = params.v0;
     v(2,1) = params.v2M * x(1) / (params.v2K + x(1)) ;
-    v(3,1) = params.v3M * x(2) / ((params.v3I + x(4))   * (params.v3K + x(2)));
-    v(4,1) = params.v4M * x(1) / ((params.v4A + 1/x(3)) * (params.v4K + x(1)));
+    v(3,1) = params.v3M * x(2) / (params.v3K * ((1 + x(4) / params.v3A) / (1 + params.v3beta * x(4) / (params.v3alpha * params.v3A)))...
+        + x(2) * ((1 + x(4) / (params.v3alpha * params.v3A)) / (1 + params.v3beta * x(4) / (params.v3alpha * params.v3A))));
+    v(4,1) = params.v4M * x(1) / ((1 + x(3) / params.v4I) * (params.v4K + x(1)));
     v(5,1) = params.v5M * x(3) * x(4) / (params.v5K + params.v53*x(3) + params.v54*x(4) + x(3)*x(4)) ;
     
 end
 
 function params = convertOdeParams(paramVec)
-% ParamVec = [bm3; bm4; v2M; v2K; v3M; v3I; v3K; v4M; v4A; v4K; v5M; v5K; v53; v54]
+% ParamVec = [bm3; bm4; v2M; v2K; v3M; v3K; v3A; v3alpha; v3beta; v4M; v4K; v4I; v5M; v5K; v53; v54]
+
 
     paramVec = paramVec(:);
 
@@ -63,14 +65,16 @@ function params = convertOdeParams(paramVec)
     params.v2M = paramVec(3);
     params.v2K = paramVec(4);
     params.v3M = paramVec(5);
-    params.v3I = paramVec(6);
-    params.v3K = paramVec(7);
-    params.v4M = paramVec(8);
-    params.v4A = paramVec(9);
-    params.v4K = paramVec(10);
-    params.v5M = paramVec(11);
-    params.v5K = paramVec(12);
-    params.v53 = paramVec(13);
-    params.v54 = paramVec(14);
+    params.v3K = paramVec(6);
+    params.v3A = paramVec(7);
+    params.v3alpha = paramVec(8);
+    params.v3beta = paramVec(9);
+    params.v4M = paramVec(10);
+    params.v4K = paramVec(11);
+    params.v4I = paramVec(12);
+    params.v5M = paramVec(13);
+    params.v5K = paramVec(14);
+    params.v53 = paramVec(15);
+    params.v54 = paramVec(16);
     
 end

@@ -1,4 +1,4 @@
-function [paramsOptimal] = fitMmBranch(odeTimeVec,odeConcMatrix,odeFluxMatrix,weightVector,stoichVars)
+function [x0] = fitMmBranch(odeTimeVec,odeConcMatrix,odeFluxMatrix,weightVector,stoichVars)
 % This function is hard-coded to identify parameters for the branched
 % pathway model represented by the Michaelis-Mented kinetic rate laws
 % described in the Supplementary Text.
@@ -21,11 +21,15 @@ function [paramsOptimal] = fitMmBranch(odeTimeVec,odeConcMatrix,odeFluxMatrix,we
     
     paramsOptimal = cell(numTries,1);
     residuals = zeros(numTries,1);
-    numParams = 12;
+    numParams = 14;
+    LB = [0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0];
+    UB = [inf, inf, inf, inf, inf, 1, inf, inf, inf, inf, inf, inf, inf, inf];
         
     for k = 1:numTries
     % Perform a nonlinear regression using rate law formulas
-        [paramsOptimal{k}, residuals(k)] = lsqcurvefit(@calcFluxes,rand(numParams,1),odeConcMatrix(1:nT,:),odeFluxMatrix(1:nT,2:5),zeros(numParams,1),inf(numParams,1),solverOpts);
+        initialParams = rand(numParams,1);
+        initialParams(7) = initialParams(7) + 1;
+        [paramsOptimal{k}, residuals(k)] = lsqcurvefit(@calcFluxes,initialParams,odeConcMatrix(1:nT,:),odeFluxMatrix(1:nT,2:5),LB,UB,solverOpts);
     end
     
     [~, idx] = min(residuals);
@@ -39,22 +43,26 @@ function fluxMatrix = calcFluxes(params,concMatrix)
 %     params(1) = v2M;
 %     params(2) = v2K;
 %     params(3) = v3M;
-%     params(4) = v3I;
-%     params(5) = v3K;
-%     params(6) = v4M;
-%     params(7) = v4A;
-%     params(8) = v4K;
-%     params(9) = v5M;
-%     params(10) = v5K;
-%     params(11) = v53;
-%     params(12) = v54;
+%     params(4) = v3K;
+%     params(5) = v3A;
+%     params(6) = v3alpha;
+%     params(7) = v3beta;
+%     params(8) = v4M;
+%     params(9) = v4K;
+%     params(10) = v4I;
+%     params(11) = v5M;
+%     params(12) = v5K;
+%     params(13) = v53;
+%     params(14) = v54;
 
     % We only need to calculate the flux values to do the fitting here
     for k = 1:size(concMatrix,1)
         fluxMatrix(k,1) = params(1) * concMatrix(k,1) / (params(2) + concMatrix(k,1)) ;
-        fluxMatrix(k,2) = params(3) * concMatrix(k,2) / ((params(4) + concMatrix(k,4))   * (params(5) + concMatrix(k,2)));
-        fluxMatrix(k,3) = params(6) * concMatrix(k,1) / ((params(7) + 1/concMatrix(k,3)) * (params(8) + concMatrix(k,1)));
-        fluxMatrix(k,4) = params(9) * concMatrix(k,3) * concMatrix(k,4) / (params(10) + params(11)*concMatrix(k,3) + params(12)*concMatrix(k,4) + concMatrix(k,3)*concMatrix(k,4)) ;
+        fluxMatrix(k,2) = params(3) * concMatrix(k,2)...
+            / (params(4) * ((1 + concMatrix(k,4) / params(5)) / (1 + params(7) * concMatrix(k,4) / (params(6) * params(5))))...
+            + concMatrix(k,2) * ((1 + concMatrix(k,4) / (params(6) * params(5))) / (1 + params(7) * concMatrix(k,4) / (params(6) * params(5)))));
+        fluxMatrix(k,3) = params(8) * concMatrix(k,1) / ((1 + concMatrix(k,3) / params(10)) * (params(9) + concMatrix(k,1)));
+        fluxMatrix(k,4) = params(11) * concMatrix(k,3) * concMatrix(k,4) / (params(12) + params(13)*concMatrix(k,3) + params(14)*concMatrix(k,4) + concMatrix(k,3)*concMatrix(k,4)) ;
     end
 end
 
