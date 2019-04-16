@@ -250,7 +250,7 @@ figure('units','normalized','outerposition',[0 0 1 1]);
     set(gca,'fontsize',plotFontSize,'linewidth',2,'XTick',plotXList,'XLim',[min(plotXList)-0.5,max(plotXList)+0.5])
     
 % %     hL = legend(legendEntries(plotOrder),'fontsize',24,'Location','East');
-    hL = legend(legendEntries(plotOrder),'fontsize',24,'Position',[.789 .507 .098 .228]);
+    hL = legend(legendEntries(plotOrder),'fontsize',24,'Position',[.789 .4 .098 .2]);
     
     
 print('Figure S8','-dtiff','-r100')
