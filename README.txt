@@ -1,5 +1,5 @@
 OVERVIEW:
-This archive contains supplementary files to the manuscript, "LK-DFBA: A Linear Programming-based mod- eling strategy for capturing dynamics and me- tabolite-dependent regulation in metabolism" by Robert Dromms and Mark Styczynski. The included code and data are those used to generate base ODE data, perform parameter fitting, and analyze model performance shown in Figures 2, 3, and 4 of the main manuscript. Updated versions of this code are hosted at https://github.com/gtStyLab/lk-dfba.
+This archive contains supplementary files to the manuscript, "LK-DFBA: A Linear Programming-based mod- eling strategy for capturing dynamics and me- tabolite-dependent regulation in metabolism" by Robert Dromms, Justin Lee, and Mark Styczynski. The included code and data are those used to generate base ODE data, perform parameter fitting, and analyze model performance shown in Figures 2, 3, and 4 of the main manuscript. Updated versions of this code are hosted at https://github.com/gtStyLab/lk-dfba.
 
 Additional file descriptions are contained within each subdirectory.
 
