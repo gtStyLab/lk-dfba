@@ -25,7 +25,7 @@ For the branch pathway model, the results shown in the manuscript were produced 
 4) We copied the directories 'branchModel/branchData' and 'branchCalculation/results' to 'branchAnalysis'
 5) We performed fitting error analysis using 'branchAnalysis/driver_calculateError_noisy.m' to generate 'branchAnalysis/processedError_noisy_compact.mat' (similarly, we used 'branchAnalysis/driver_calculateError_missing.m' to generate  'branchAnalysis/processedError_missing_compact.mat' and  'branchAnalysis/driver_calculateError_hiRes.m' to generate  'branchAnalysis/processedError_hiRes_compact.mat')
 Note: For the manuscript, we manually split 'branchAnalysis/results' into multiple results directories corresponding to the exact type of fit performed. The 'filename' field in the structures saved in 'branchAnalysis/processedError_hiRes_compact.mat', 'branchAnalysis/processedError_missing_compact.mat', and 'branchAnalysis/processedError_noisy_compact.mat' reflect this.
-6) Figure 2 was generated using the script 'branchAnalysis/driver_genFigure2_plotError_noisy.m', and Figure 3 was generated using 'branchAnalysis/driver_genFigure3_plotError_missing.m'. (Similarly, Figure S8 was generated using 'branchAnalysis/driver_genFigureS8_plotError_hiRes.m').
+6) Figure 2 was generated using the script 'branchAnalysis/driver_genFigure2_plotError_noisy.m', and Figure 3 was generated using 'branchAnalysis/driver_genFigure3_plotError_missing.m'. (Similarly, Figure S8 was generated using 'branchAnalysis/driver_genFigureS8_plotError_hiRes.m' and Figure S11 was generated using 'driver_genFigureS11_plotParamVariance_LRp_noisy.m').
 
 
 For the Chassagnole E. coli model, the results shown in the manuscript were produced by running the following scripts in sequence:
