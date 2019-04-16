@@ -4,7 +4,7 @@ branch_k-01_hiRes.mat
 Extra copy of the k=1 noiseless data, identical to the one in 'branchData_hiRes'
 
 branchData
-Directory containing the noisy synthetic data used to produce Figures 2 and 3 of the manuscript.
+Directory containing the noisy synthetic data used to produce Figures 2, 3, and S11 of the manuscript.
 
 branchData_hiRes
 Directory containing the noiseless synthetic data used to produce Figure S8 of the Supplementary Text.
@@ -26,6 +26,9 @@ MATLAB script to generate Figure 3 of the manuscript.
 
 driver_genFigureS8_plotError_hiRes.m
 MATLAB script to generate Figure S8 of the Supplementary Text.
+
+driver_genFigureS11_plotParamVariance_LRp_noisy
+MATLAB script to generate Figure S11 of the Supplementary Text.
 
 processedError_hiRes_compact.mat
 File containing fitted parameters and simulation accuracy (calculated prSSE) for the hiRes fits for Figure S8 of the Supplementary Text.
