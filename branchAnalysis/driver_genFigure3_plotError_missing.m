@@ -215,8 +215,8 @@ end
 
 pList = num2cell(pArray);
 
-plotMarker = 8;
-linewidthvar = 1.5;
+plotMarker = 7;
+linewidthvar = 1;
 
 
 titleString{ 1} = 'CoV = 0.05';
@@ -284,48 +284,49 @@ for k = 1:15
     hold on
     if plotData
         hList{k}(n) = plot([15,20,30,40,50],meanError(idxData(x1:x2)),'k-','markersize',plotMarker,'linewidth',linewidthvar);
-        plot([15,20,30,40,50],meanError(idxData(x1:x2)) + stdError(idxData(x1:x2)),'k-.','markersize',plotMarker,'linewidth',1)
-        plot([15,20,30,40,50],meanError(idxData(x1:x2)) - stdError(idxData(x1:x2)),'k-.','markersize',plotMarker,'linewidth',1)
+        plot([15,20,30,40,50],meanError(idxData(x1:x2)) + stdError(idxData(x1:x2)),'k-.','markersize',plotMarker,'linewidth',0.5)
+        plot([15,20,30,40,50],meanError(idxData(x1:x2)) - stdError(idxData(x1:x2)),'k-.','markersize',plotMarker,'linewidth',0.5)
         n=n+1;
     end
     
     if plotBST
         hList{k}(n) = plot([15,20,30,40,50],meanError(idxBST (x1:x2)),'m-p','markersize',plotMarker,'linewidth',linewidthvar);
-        plot([15,20,30,40,50],meanError(idxBST (x1:x2)) + stdError(idxData(x1:x2)),'m-.','markersize',plotMarker,'linewidth',1)
-        plot([15,20,30,40,50],meanError(idxBST (x1:x2)) - stdError(idxData(x1:x2)),'m-.','markersize',plotMarker,'linewidth',1)
+        plot([15,20,30,40,50],meanError(idxBST (x1:x2)) + stdError(idxData(x1:x2)),'m-.','markersize',plotMarker,'linewidth',0.5)
+        plot([15,20,30,40,50],meanError(idxBST (x1:x2)) - stdError(idxData(x1:x2)),'m-.','markersize',plotMarker,'linewidth',0.5)
         n=n+1;
     end
 
     if plotR
         hList{k}(n) = plot([15,20,30,40,50],meanError(idxR   (x1:x2)),'r-v','markersize',plotMarker,'linewidth',linewidthvar);
-        plot([15,20,30,40,50],meanError(idxR   (x1:x2)) + stdError(idxData(x1:x2)),'r-.','markersize',plotMarker,'linewidth',1)
-        plot([15,20,30,40,50],meanError(idxR   (x1:x2)) - stdError(idxData(x1:x2)),'r-.','markersize',plotMarker,'linewidth',1)
+        plot([15,20,30,40,50],meanError(idxR   (x1:x2)) + stdError(idxData(x1:x2)),'r-.','markersize',plotMarker,'linewidth',0.5)
+        plot([15,20,30,40,50],meanError(idxR   (x1:x2)) - stdError(idxData(x1:x2)),'r-.','markersize',plotMarker,'linewidth',0.5)
         n=n+1;
     end
 
     if plotRp
         hList{k}(n) = plot([15,20,30,40,50],meanError(idxRp  (x1:x2)),'b-s','markersize',plotMarker,'linewidth',linewidthvar);
-        plot([15,20,30,40,50],meanError(idxRp  (x1:x2)) + stdError(idxData(x1:x2)),'b-.','markersize',plotMarker,'linewidth',1)
-        plot([15,20,30,40,50],meanError(idxRp  (x1:x2)) - stdError(idxData(x1:x2)),'b-.','markersize',plotMarker,'linewidth',1)
+        plot([15,20,30,40,50],meanError(idxRp  (x1:x2)) + stdError(idxData(x1:x2)),'b-.','markersize',plotMarker,'linewidth',0.5)
+        plot([15,20,30,40,50],meanError(idxRp  (x1:x2)) - stdError(idxData(x1:x2)),'b-.','markersize',plotMarker,'linewidth',0.5)
         n=n+1;
     end
     
     textX = xTextMult * (52-13) + (13);
     textY = yTextMult * range(ylimlist{k}) + min(ylimlist{k});
-    text(textX,textY,letterList(k),'fontsize',18,'FontWeight','bold')
+    text(textX,textY,letterList(k),'fontsize',10,'FontWeight','bold')
     
+    set(gca,'fontsize',8,'linewidth',2,'xlim',[13,52],'XTick',[15,20,30,40,50],'ylim',ylimlist{k},'YTick',yticklist{k})
     if k>12
-        xlabel('nT','fontsize',16)
+        xlabel('nT','fontsize',11)
     end
     if ~rem(k-1,3)
-        ylabel({'-log_1_0(prSSE)'},'fontsize',18)
+        ylabel({'-log_1_0(prSSE)'},'fontsize',11)
     end
     if k<4
-        title(titleString{k},'fontsize',18)
+        title(titleString{k},'fontsize',10)
     end
     box on
     grid on
-    set(gca,'fontsize',11,'linewidth',2,'xlim',[13,52],'XTick',[15,20,30,40,50],'ylim',ylimlist{k},'YTick',yticklist{k})
+    
     
 end
 
@@ -344,11 +345,10 @@ if plotRp
 end
 
 subplot(subPR,subPC,pList{end-1})
-legend(hList{end-1},legendEntries,'fontsize',24,'Orientation','Horizontal','Position',[.135 .01 .75 .06]);
+legend(hList{end-1},legendEntries,'fontsize',12,'Orientation','Horizontal','Position',[.135 .02 .75 .03]);
 
 
-print('Figure 3_lo','-dtiff','-r200')
-% % print('Figure 3','-dtiff','-r1200')
+print('Fig3','-dtiff','-r300')
 
 
 
