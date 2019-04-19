@@ -8,7 +8,7 @@ xtickset = [20,30,40];
 ytickset = 0:.2:2;
 
 xMult = -.1;
-yMult = 1.075;
+yMult = 1.06;
 
 letterIndex1 = 'A';
 letterIndex2 = 'B';
@@ -144,20 +144,20 @@ plotStringList = {
 plotOrder = [1,2,3,4,5];
 
 
-numRows = 5;
+numRows = 4;
 numCols = 5;
 w1 = [1 17];
 w2 = [3 19];
 wL = [5 15];
 
 % % nMax = 5;
-plotMarkersize = 18;
-plotLineWidth = 2.5;
-plotFontSize = 24;
+plotMarkersize = 8;
+plotLineWidth = 1.5;
+plotFontSize = 12;
 
 
-yH = 0.65;
-xW = 1;
+yH = 0.6;
+xW = 0.475;
 
 figure('units','normalized','outerposition',[0 1-yH xW yH]);
 subplot(numRows,numCols,w1)
@@ -171,21 +171,21 @@ subplot(numRows,numCols,w1)
         plot(plotXList, meanError(plotIdxList{i}(plotYIdx)) - stdError(plotIdxList{i}(plotYIdx)), plotStringList{i}(1),'Linestyle',':','linewidth',plotLineWidth)
     end
         
+    set(gca,'fontsize',10,'linewidth',2,'XTick',xtickset,'XLim',xlimset)
+    set(gca,'ylim',ylimset,'YTick',ytickset)
     xlabel('nT','fontsize',plotFontSize)
 % %     ylabel({'-log_1_0(SSE)','Better performance \rightarrow'},'fontsize',plotFontSize)
     ylabel({'Better performance \rightarrow','-log_1_0(prSSE)'},'fontsize',plotFontSize)
     title('CoV = 0.10','fontsize',plotFontSize)
     box on
     grid on
-    set(gca,'fontsize',plotFontSize,'linewidth',2,'XTick',xtickset,'XLim',xlimset)
-    set(gca,'ylim',ylimset,'YTick',ytickset)
     
     xlimits = get(gca,'xlim');
     ylimits = get(gca,'ylim');
     xCoord = xMult * diff(xlimits) + xlimits(1);
     yCoord = yMult * diff(ylimits) + ylimits(1);
     
-    text(xCoord,yCoord,letterIndex1,'fontsize',24,'fontweight','bold');
+    text(xCoord,yCoord,letterIndex1,'fontsize',12,'fontweight','bold');
 
 
 subplot(numRows,numCols,w2)
@@ -198,19 +198,19 @@ subplot(numRows,numCols,w2)
         plot(plotXList, meanError(plotIdxList{i}(plotYIdx)) - stdError(plotIdxList{i}(plotYIdx)), plotStringList{i}(1),'Linestyle',':','linewidth',plotLineWidth)
     end
         
+    set(gca,'fontsize',10,'linewidth',2,'XTick',xtickset,'XLim',xlimset)
+    set(gca,'ylim',ylimset,'YTick',ytickset)
     xlabel('nT','fontsize',plotFontSize)
     title('CoV = 0.20','fontsize',plotFontSize)
     box on
     grid on
-    set(gca,'fontsize',plotFontSize,'linewidth',2,'XTick',xtickset,'XLim',xlimset)
-    set(gca,'ylim',ylimset,'YTick',ytickset)
     
     xlimits = get(gca,'xlim');
     ylimits = get(gca,'ylim');
     xCoord = xMult * diff(xlimits) + xlimits(1);
     yCoord = yMult * diff(ylimits) + ylimits(1);
     
-    text(xCoord,yCoord,letterIndex2,'fontsize',24,'fontweight','bold');
+    text(xCoord,yCoord,letterIndex2,'fontsize',12,'fontweight','bold');
     
 subplot(numRows,numCols,wL)
     hold on
@@ -221,12 +221,11 @@ subplot(numRows,numCols,wL)
 
     ylim([-10 -9.999]);
     set(gca,'Visible','off')
-    hL = legend(legendEntries(plotOrder),'fontsize',24,'Location','East');
+    hL = legend(legendEntries(plotOrder),'fontsize',12,'Location','East');
     set(hL,'Visible','on')
     
     
-print('Figure 4_lo','-dtiff','-r100')
-% % print('Figure 4','-dtiff','-r1200')
+print('Fig4','-dtiff','-r300')
 
     
     
