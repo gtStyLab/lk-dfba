@@ -1,6 +1,6 @@
 clc; clear; close all
 
-errorFileName = 'ProcessedError_branch_missing_compact.mat';
+errorFileName = 'processedError_branch_missing_compact.mat';
 
 stringMatchList{1}  = 'hiRes';                   %  1
 stringMatchList{2}  = 'nT-015';                  %  2
