@@ -348,7 +348,7 @@ subplot(subPR,subPC,pList{end-1})
 legend(hList{end-1},legendEntries,'fontsize',12,'Orientation','Horizontal','Position',[.135 .02 .75 .03]);
 
 
-print('Fig3','-dtiff','-r300')
+print('Fig4','-dtiff','-r300')
 
 
 
