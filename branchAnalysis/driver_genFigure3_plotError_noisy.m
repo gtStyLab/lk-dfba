@@ -434,5 +434,5 @@ figure('units','normalized','outerposition',[0 1-yH xW yH]);
     set(hL,'Visible','on')
     
     
-print('Fig2','-dtiff','-r300')
+print('Fig3','-dtiff','-r300')
 
