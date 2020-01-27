@@ -13,10 +13,10 @@ driver_genChassFits_unsplit.m
 MATLAB Script to generate 'driver_runAllChassFits_matlab_unsplit.m'.
 
 driver_runAllChassFits_matlab_split.m
-MATLAB Script containing a list of calls to wrapper_fitChassNoisySplit(). This script performs the main parameter fitting task for the E. coli data in Figure 4 of the manuscript.
+MATLAB Script containing a list of calls to wrapper_fitChassNoisySplit(). This script performs the main parameter fitting task for the E. coli data in Figure 5 of the manuscript.
 
 driver_runAllChassFits_matlab_unsplit.m
-MATLAB Script containing a list of calls to wrapper_fitChassNoisyUnplit(). This script performs the main parameter fitting task for the E. coli data in Figure 4 of the manuscript.
+MATLAB Script containing a list of calls to wrapper_fitChassNoisyUnplit(). This script performs the main parameter fitting task for the E. coli data in Figure 5 of the manuscript.
 
 loadFileNameList_chassNoisy.m
 A list of files in 'chassAnalysis/chassDataV' used by driver_genChassFits_split.m and driver_genChassFits_unsplit.m to generate calls to wrapper_fitChassNoisySplit() and wrapper_fitChassNoisyUnsplit().
