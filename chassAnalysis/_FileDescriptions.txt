@@ -1,7 +1,7 @@
 This file contains a description of the files in this directory.
 
-chassDataV
-Directory containing the noisy synthetic data used to produce Figure 4 of the manuscript.
+chassData
+Directory containing the noisy synthetic data used to produce Figure 5 of the manuscript.
 
 chassFbaStm.mat
 Contains the E. coli model Stoichiometric Matrix. Used to set up the LK-DFBA model.
@@ -13,11 +13,11 @@ chassV_hiRes.mat
 Noiseless E. coli ODE data
 
 driver_calculateError_chass.m
-MATLAB script to use fitted results from 'chassCalculation' to produce the tabulated errors file 'processedError_chass_compact.mat'. These results are used with Figure 4 of the manuscript.
+MATLAB script to use fitted results from 'chassCalculation' to produce the tabulated errors file 'processedError_chass_compact.mat'. These results are used with Figure 5 of the manuscript.
 
-driver_genFigure4_chassError.m
-MATLAB script to generate Figure 4 of the manuscript.
+driver_genFigure5_chassError.m
+MATLAB script to generate Figure 5 of the manuscript.
 
 processedError_chass_compact.mat
-File containing fitted parameters and simulation accuracy (calculated prSSE) for the unsplit and split noisy fits for Figure 4 of the manuscript.
+File containing fitted parameters and simulation accuracy (calculated prSSE) for the unsplit and split noisy fits for Figure 5 of the manuscript.
 
