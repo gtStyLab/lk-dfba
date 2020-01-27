@@ -1,5 +1,5 @@
 OVERVIEW:
-This archive contains supplementary files to the manuscript, "LK-DFBA: A Linear Programming-based mod- eling strategy for capturing dynamics and me- tabolite-dependent regulation in metabolism" by Robert Dromms, Justin Lee, and Mark Styczynski. The included code and data are those used to generate base ODE data, perform parameter fitting, and analyze model performance shown in Figures 2, 3, and 4 of the main manuscript. Updated versions of this code are hosted at https://github.com/gtStyLab/lk-dfba.
+This archive contains supplementary files to the manuscript, "LK-DFBA: A Linear Programming-based mod- eling strategy for capturing dynamics and me- tabolite-dependent regulation in metabolism" by Robert Dromms, Justin Lee, and Mark Styczynski. The included code and data are those used to generate base ODE data, perform parameter fitting, and analyze model performance shown in Figures 3, 4, and 5 of the main manuscript. Updated versions of this code are hosted at https://github.com/gtStyLab/lk-dfba.
 
 Additional file descriptions are contained within each subdirectory.
 
@@ -25,7 +25,7 @@ For the branch pathway model, the results shown in the manuscript were produced 
 4) We copied the directories 'branchModel/branchData' and 'branchCalculation/results' to 'branchAnalysis'
 5) We performed fitting error analysis using 'branchAnalysis/driver_calculateError_noisy.m' to generate 'branchAnalysis/processedError_noisy_compact.mat' (similarly, we used 'branchAnalysis/driver_calculateError_missing.m' to generate  'branchAnalysis/processedError_missing_compact.mat' and  'branchAnalysis/driver_calculateError_hiRes.m' to generate  'branchAnalysis/processedError_hiRes_compact.mat')
 Note: For the manuscript, we manually split 'branchAnalysis/results' into multiple results directories corresponding to the exact type of fit performed. The 'filename' field in the structures saved in 'branchAnalysis/processedError_hiRes_compact.mat', 'branchAnalysis/processedError_missing_compact.mat', and 'branchAnalysis/processedError_noisy_compact.mat' reflect this.
-6) Figure 2 was generated using the script 'branchAnalysis/driver_genFigure2_plotError_noisy.m', and Figure 3 was generated using 'branchAnalysis/driver_genFigure3_plotError_missing.m'. (Similarly, Figure S8 was generated using 'branchAnalysis/driver_genFigureS8_plotError_hiRes.m' and Figure S11 was generated using 'driver_genFigureS11_plotParamVariance_LRp_noisy.m').
+6) Figure 3 was generated using the script 'branchAnalysis/driver_genFigure3_plotError_noisy.m', and Figure 4 was generated using 'branchAnalysis/driver_genFigure4_plotError_missing.m'. (Similarly, Figure S8 was generated using 'branchAnalysis/driver_genFigureS8_plotError_hiRes.m' and Figure S11 was generated using 'driver_genFigureS11_plotParamVariance_LRp_noisy.m').
 
 
 For the Chassagnole E. coli model, the results shown in the manuscript were produced by running the following scripts in sequence:
@@ -37,7 +37,7 @@ For the Chassagnole E. coli model, the results shown in the manuscript were prod
 6) We ran 'chassCalculation/driver_runAllChassFits_matlab_unsplit.m' and 'chassCalculation/driver_runAllChassFits_matlab_split.m' to produce results directories 'chassCalculation/results_unsplit' and 'chassCalculation/results_split', respectively.
 7) We copied the directories 'chassModel/chassDataV', 'chassCalculation/results_unsplit' and 'chassCalculation/results_split' to 'chassAnalysis'.
 8) We performed fitting error analysis using 'chassAnalysis/driver_calculateError_chass.m' to generate 'chassAnalysis/processedError_chass_compact.mat'
-9) Figure 4 was generated using the script 'chassAnalysis/driver_genFigure4_chassError.m'.
+9) Figure 5 was generated using the script 'chassAnalysis/driver_genFigure5_chassError.m'.
 
 
 
@@ -46,7 +46,7 @@ For the Chassagnole E. coli model, the results shown in the manuscript were prod
 DIRECTORIES:
 
 branchAnalysis:
-Contains MATLAB scripts for analyzing the results of fitting the branched pathway model, including the scripts to generate Figures 2 and 3 of the manuscript.
+Contains MATLAB scripts for analyzing the results of fitting the branched pathway model, including the scripts to generate Figures 3 and 4 of the manuscript.
 
 branchCalculation:
 Contains MATLAB scripts for performing parameter fitting on the branched pathway model data sets.
@@ -55,7 +55,7 @@ branchModel:
 Contains documentation for the branched pathway model, as well as the MATLAB scripts used to generate noiseless and noisy data sets.
 
 chassAnalysis:
-Contains MATLAB scripts for analyzing the results of fitting the E. coli model, including the scripts to generate Figure 4 of the manuscript.
+Contains MATLAB scripts for analyzing the results of fitting the E. coli model, including the scripts to generate Figure 5 of the manuscript.
 
 chassCalculation:
 Contains MATLAB scripts for performing parameter fitting on the E. coli model data sets.
