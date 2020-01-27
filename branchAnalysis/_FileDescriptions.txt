@@ -4,7 +4,7 @@ branch_k-01_hiRes.mat
 Extra copy of the k=1 noiseless data, identical to the one in 'branchData_hiRes'
 
 branchData
-Directory containing the noisy synthetic data used to produce Figures 2, 3, and S11 of the manuscript.
+Directory containing the noisy synthetic data used to produce Figures 3, 4, and S11 of the manuscript.
 
 branchData_hiRes
 Directory containing the noiseless synthetic data used to produce Figure S8 of the Supplementary Text.
@@ -13,15 +13,15 @@ driver_calculateError_hiRes.m
 MATLAB script to use fitted results from 'branchCalculation' to produce the tabulated errors file 'processedError_hiRes_compact.mat'. These results are used with Figure S8 of the Supplementary Text.
 
 driver_calculateError_missing.m
-MATLAB script to use fitted results from 'branchCalculation' to produce the tabulated errors file 'processedError_missing_compact.mat'. These results are used with Figure 3 of the manuscript.
+MATLAB script to use fitted results from 'branchCalculation' to produce the tabulated errors file 'processedError_missing_compact.mat'. These results are used with Figure 4 of the manuscript.
 
 driver_calculateError_noisy.m
-MATLAB script to use fitted results from 'branchCalculation' to produce the tabulated errors file 'processedError_noisy_compact.mat'. These results are used with Figure 2 of the manuscript.
+MATLAB script to use fitted results from 'branchCalculation' to produce the tabulated errors file 'processedError_noisy_compact.mat'. These results are used with Figure 3 of the manuscript.
 
-driver_genFigure2_plotError_noisy.m
+driver_genFigure3_plotError_noisy.m
 MATLAB script to generate Figure 2 of the manuscript.
 
-driver_genFigure3_plotError_missing.m
+driver_genFigure4_plotError_missing.m
 MATLAB script to generate Figure 3 of the manuscript.
 
 driver_genFigureS8_plotError_hiRes.m
@@ -34,7 +34,7 @@ processedError_hiRes_compact.mat
 File containing fitted parameters and simulation accuracy (calculated prSSE) for the hiRes fits for Figure S8 of the Supplementary Text.
 
 processedError_missing_compact.mat
-File containing fitted parameters and simulation accuracy (calculated prSSE) for the noisy fits for Figure 3 of the manuscript.
+File containing fitted parameters and simulation accuracy (calculated prSSE) for the missing fits for Figure 4 of the manuscript.
 
 processedError_noisy_compact.mat
 File containing fitted parameters and simulation accuracy (calculated prSSE) for the noisy fits for Figure 3 of the manuscript.
